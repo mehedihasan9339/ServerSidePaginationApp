@@ -31,4 +31,4 @@ To run this project locally, you'll need the following:
 Here is a screenshot of the employee list view:
 
 #### Employee List View
-![Employee List Screenshot](path/to/screenshot.png)
+![Employee List Screenshot](https://raw.githubusercontent.com/mehedihasan9339/ServerSidePaginationApp/refs/heads/master/ServerSidePaginationApp/server-side-pagination.png)
