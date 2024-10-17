@@ -32,3 +32,30 @@ Here is a screenshot of the employee list view:
 
 #### Employee List View
 ![Employee List Screenshot](https://raw.githubusercontent.com/mehedihasan9339/ServerSidePaginationApp/refs/heads/master/ServerSidePaginationApp/server-side-pagination.png)
+
+## Inserting Dummy Data
+
+To test the application with a large dataset, you can insert 10 million dummy records into the `Employees` table by running the following SQL script in your SQL Server database:
+
+```sql
+DECLARE @Counter INT = 1;
+DECLARE @MaxCount INT = 10000000; -- 10 million
+DECLARE @Name NVARCHAR(50);
+DECLARE @Position NVARCHAR(50);
+DECLARE @Office NVARCHAR(50);
+DECLARE @Salary INT;
+
+WHILE @Counter <= @MaxCount
+BEGIN
+    -- Generate random data for each employee
+    SET @Name = 'Employee ' + CAST(@Counter AS NVARCHAR);
+    SET @Position = 'Position ' + CAST((ABS(CHECKSUM(NEWID())) % 5 + 1) AS NVARCHAR); -- Random position 1-5
+    SET @Office = 'Office ' + CAST((ABS(CHECKSUM(NEWID())) % 10 + 1) AS NVARCHAR); -- Random office 1-10
+    SET @Salary = ABS(CHECKSUM(NEWID())) % (120000 - 40000 + 1) + 40000; -- Random salary between 40,000 and 120,000
+
+    INSERT INTO Employees (Name, Position, Office, Salary)
+    VALUES (@Name, @Position, @Office, @Salary);
+
+    SET @Counter = @Counter + 1;
+END
+```
