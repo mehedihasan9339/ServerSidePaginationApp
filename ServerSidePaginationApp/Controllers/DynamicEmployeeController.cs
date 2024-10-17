@@ -19,14 +19,12 @@ namespace ServerSidePaginationApp.Controllers
 
         #region Employee
 
-        // This action renders the Razor view for employees
         [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
 
-        // This action handles the server-side pagination for employee DataTables
         [HttpPost("paginate")]
         public async Task<IActionResult> Paginate([FromBody] TableRequest request)
         {
@@ -76,14 +74,12 @@ namespace ServerSidePaginationApp.Controllers
 
         #region Department
 
-        // This action renders the Razor view for departments
         [HttpGet("departments")]
         public IActionResult DepartmentIndex()
         {
             return View();
         }
 
-        // This action handles the server-side pagination for department DataTables
         [HttpPost("departments/paginate")]
         public async Task<IActionResult> PaginateDepartments([FromBody] TableRequest request)
         {

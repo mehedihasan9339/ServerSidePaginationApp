@@ -1,5 +1,5 @@
 ﻿function initializeTable(tableId, url, columns) {
-    $('.loader').show(); // Show loader during table initialization
+    $('.loader').show();
 
     $('#' + tableId).DataTable({
         "processing": true,
@@ -9,7 +9,6 @@
             "type": "POST",
             "contentType": "application/json",
             "data": function (d) {
-                // Construct the data object including search parameters
                 return JSON.stringify({
                     draw: d.draw,
                     start: d.start,
@@ -21,7 +20,7 @@
                 });
             },
             "complete": function () {
-                $('.loader').hide(); // Hide loader when data is fetched
+                $('.loader').hide();
             }
         },
         "columns": columns,
@@ -29,6 +28,6 @@
         "ordering": true,
         "lengthChange": true,
         "info": true,
-        "searching": true // Make sure searching is enabled
+        "searching": true
     });
 }
