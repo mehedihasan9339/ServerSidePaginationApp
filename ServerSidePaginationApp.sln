@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerSidePaginationApp", "ServerSidePaginationApp\ServerSidePaginationApp.csproj", "{4D38867D-19EF-4EBE-A8C6-54D7CF61C4C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D38867D-19EF-4EBE-A8C6-54D7CF61C4C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D38867D-19EF-4EBE-A8C6-54D7CF61C4C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D38867D-19EF-4EBE-A8C6-54D7CF61C4C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D38867D-19EF-4EBE-A8C6-54D7CF61C4C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35D58890-7452-4E0A-8288-B1E804FF6C6D}
+	EndGlobalSection
+EndGlobal
