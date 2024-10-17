@@ -5,10 +5,12 @@ This project is a simple web application for displaying a list of employees with
 ## Features
 
 - **Server-Side Pagination**: Efficient handling of large datasets by fetching and displaying data on demand.
+- **Dynamic Pagination Helper**: Implemented to allow dynamic pagination for any tables.
 - **Custom Styling**: Professionally styled table and pagination with hover effects and responsive design.
 - **Loader Animation**: Displays a spinner while data is being fetched to provide feedback to users.
 - **AJAX Loading**: Data is loaded asynchronously using AJAX, ensuring smooth user interactions without full-page refreshes.
 - **DataTables Integration**: Uses DataTables to enhance the functionality of HTML tables with features like sorting, searching, and pagination.
+- **Server-Side Pagination in Web API**: The Web API handles pagination logic to efficiently retrieve data for the front end.
 
 ## Technologies Used
 
@@ -55,6 +57,29 @@ BEGIN
 
     INSERT INTO Employees (Name, Position, Office, Salary)
     VALUES (@Name, @Position, @Office, @Salary);
+
+    SET @Counter = @Counter + 1;
+END
+```
+
+You can also use the following queries to insert dummy data into the Departments table for testing purposes:
+
+```
+DECLARE @Counter INT = 1;
+DECLARE @MaxCount INT = 5000; -- Set to 5000
+DECLARE @Name NVARCHAR(50);
+DECLARE @Location NVARCHAR(50);
+DECLARE @EmployeeCount INT;
+
+WHILE @Counter <= @MaxCount
+BEGIN
+    -- Generate random data for each department
+    SET @Name = 'Department ' + CAST(@Counter AS NVARCHAR);
+    SET @Location = 'Location ' + CAST((ABS(CHECKSUM(NEWID())) % 10 + 1) AS NVARCHAR); -- Random location 1-10
+    SET @EmployeeCount = ABS(CHECKSUM(NEWID())) % 100 + 1; -- Random employee count between 1 and 100
+
+    INSERT INTO Departments (Name, Location, EmployeeCount)
+    VALUES (@Name, @Location, @EmployeeCount);
 
     SET @Counter = @Counter + 1;
 END
